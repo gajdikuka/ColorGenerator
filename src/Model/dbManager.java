@@ -1,9 +1,11 @@
 package Model;
+import Controller.Logger.ProgramLogger;
+
 import java.sql.*;
 import java.util.ArrayList;
 
 public class dbManager {
-
+    private ProgramLogger logger = new ProgramLogger();
     private Connection connection;
 
     public void Csatlakoz(){
@@ -11,9 +13,8 @@ public class dbManager {
         try {
             Class.forName("oracle.jdbc.OracleDriver");
         } catch (ClassNotFoundException e) {
-
             System.out.println("No Driver!");
-            e.printStackTrace();
+            logger.LogException(e);
             return;
         }
 
@@ -24,7 +25,7 @@ public class dbManager {
                     "jdbc:oracle:thin:@193.225.33.71:1521:xe", "szg6rp", "szelektcsillag");
         } catch (SQLException e){
             System.out.println("Connection Failed");
-            e.printStackTrace();
+            logger.LogException(e);
             return;
         }
 
@@ -43,7 +44,7 @@ public class dbManager {
 
         }catch(SQLException e){
             System.out.println("Connection Failed!");
-            e.printStackTrace();
+            logger.LogException(e);
         }
         return hexList;
     }

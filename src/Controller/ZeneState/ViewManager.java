@@ -1,6 +1,7 @@
 package Controller.ZeneState;
 
 import Controller.ColorGeneration.ColorGenerator;
+import Controller.Logger.ProgramLogger;
 import Controller.WindowStrategia.ColorForm;
 import Controller.WindowStrategia.Form;
 import Controller.WindowStrategia.MainForm;
@@ -13,13 +14,14 @@ import java.awt.event.ActionListener;
 public class ViewManager {
 
     private static ViewManager instance = new ViewManager();
-
-    public Form colorWindow;
-    public Form mainWindow;
-    public MainWindow foAblak;
     public static ViewManager GetInstance(){
         return instance;
     }
+    private Form colorWindow;
+    private Form mainWindow;
+    private MainWindow foAblak;
+    private ProgramLogger logger = new ProgramLogger();
+    private ZeneAllapot allapot = new Zene0();
 
     private ViewManager(){
         ColorGenerator cg = new ColorGenerator();
@@ -28,16 +30,17 @@ public class ViewManager {
         colorWindow.TipustValaszt(new ColorForm());
         mainWindow.TipustValaszt(new MainForm());
         foAblak = (MainWindow)mainWindow.getWindow();
-        foAblak.btn_GenerateColor.addActionListener(new ActionListener() {
+        foAblak.getBtn_GenerateColor().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String hexcode = cg.Generate();
                 colorWindow.getFrame().getContentPane().setBackground(Color.decode(hexcode));
-                foAblak.ta_ColorText.setText(hexcode);
+                foAblak.getTa_ColorText().setText(hexcode);
+                logger.LogInfo("Színt generált: " + hexcode);
             }
         });
 
-        foAblak.btn_ChangeMode.addActionListener(new ActionListener() {
+        foAblak.getBtn_ChangeMode().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 GombLenyomas();
@@ -48,8 +51,6 @@ public class ViewManager {
     public void setAllapot(ZeneAllapot allapot) {
         this.allapot = allapot;
     }
-
-    private ZeneAllapot allapot = new Zene0();
 
     public void GombLenyomas(){
         allapot.GombLenyomas(this);

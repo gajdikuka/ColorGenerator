@@ -1,10 +1,9 @@
 package Controller.WindowStrategia;
 
-import View.ColorWindow;
+import Controller.Logger.ProgramLogger;
 import View.MainWindow;
-
 import javax.swing.*;
-import java.awt.*;
+
 
 public class MainForm extends FormStrategia{
     private MainWindow mw = new MainWindow();

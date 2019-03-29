@@ -6,7 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Form {
-    FormStrategia fs;
+    private FormStrategia fs;
     private Object cw;
     private JFrame frame;
 
@@ -22,17 +22,6 @@ public class Form {
 
     public Object getWindow(){
         return cw;
-    }
-
-    public void Villog(){
-        ColorGenerator cg = new ColorGenerator();
-        while(true){
-            try {
-                Thread.sleep(1000);
-            }catch(Exception e){};
-            String hexcode = cg.Generate();
-            this.getFrame().getContentPane().setBackground(Color.decode(hexcode));
-        }
     }
 
 }
