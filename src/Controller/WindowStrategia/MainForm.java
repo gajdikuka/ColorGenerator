@@ -1,6 +1,4 @@
 package Controller.WindowStrategia;
-
-import Controller.Logger.ProgramLogger;
 import View.MainWindow;
 import javax.swing.*;
 

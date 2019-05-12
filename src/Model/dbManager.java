@@ -15,7 +15,6 @@ public class dbManager {
         } catch (ClassNotFoundException e) {
             System.out.println("No Driver!");
             logger.LogException(e);
-            return;
         }
 
         connection = null;
@@ -26,11 +25,16 @@ public class dbManager {
         } catch (SQLException e){
             System.out.println("Connection Failed");
             logger.LogException(e);
-            return;
         }
 
     }
 
+    /**
+     *
+     * This method connects to the database and
+     * gets all the values stored in it.
+     * @return ArrayList<Character> This should return [1,2,3,4,5,6,7,8,9,A,B,C,D,E,F]
+     */
     public ArrayList<Character> GetHex(){
         ArrayList<Character> hexList = new ArrayList<>();
         Statement stmt;

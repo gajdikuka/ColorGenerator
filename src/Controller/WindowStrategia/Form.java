@@ -1,9 +1,5 @@
 package Controller.WindowStrategia;
-
-import Controller.ColorGeneration.ColorGenerator;
-
 import javax.swing.*;
-import java.awt.*;
 
 public class Form {
     private FormStrategia fs;
