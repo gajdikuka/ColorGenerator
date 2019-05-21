@@ -1,6 +1,6 @@
 package Controller;
 
-import Controller.ColorGeneration.ColorGenerator;
+import Model.ColorGeneration.ColorGenerator;
 import Controller.Logger.ProgramLogger;
 import Controller.WindowStrategia.ColorForm;
 import Controller.WindowStrategia.Form;

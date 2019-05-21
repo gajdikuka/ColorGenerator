@@ -1,6 +1,6 @@
 package Tests;
 
-import Controller.ColorGeneration.HexList;
+import Model.ColorGeneration.HexList;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

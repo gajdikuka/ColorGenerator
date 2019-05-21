@@ -1,6 +1,6 @@
 package Tests;
 
-import Controller.ColorGeneration.ColorGenerator;
+import Model.ColorGeneration.ColorGenerator;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

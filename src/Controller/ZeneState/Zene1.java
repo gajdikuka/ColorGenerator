@@ -1,5 +1,5 @@
 package Controller.ZeneState;
-import Controller.ColorGeneration.ColorGenerator;
+import Model.ColorGeneration.ColorGenerator;
 import Controller.Logger.ProgramLogger;
 import Controller.ViewManager;
 import javafx.scene.media.Media;

@@ -1,4 +1,4 @@
-package Controller.ColorGeneration;
+package Model.ColorGeneration;
 
 import java.util.ArrayList;
 import java.util.Random;
